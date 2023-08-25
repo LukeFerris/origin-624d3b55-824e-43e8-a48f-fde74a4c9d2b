@@ -1,0 +1,8 @@
+{
+  "componentName": {
+    "placeholderName": {
+      "guidelines": "Any guidelines found within the comments",
+      "content": "The generated content adhering to the guidelines"
+    }
+  }
+}

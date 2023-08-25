@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import text from "assets/text/text.json";
+
+export default function TicTacToe() {
+  const emptyBoard = Array(9).fill(null);
+  const [board, setBoard] = useState(emptyBoard);
+  const [isXNext, setIsXNext] = useState(true);
+  const winner = calculateWinner(board);
+  const isDraw = checkDraw(board);
+
+  function handleClick(index) {
+    if (board[index] || winner) return;
+    const newBoard = [...board];
+    newBoard[index] = isXNext ? "X" : "O";
+    setBoard(newBoard);
+    setIsXNext(!isXNext);
+  }
+
+  function renderSquare(index) {
+    return (
+      <button style={{ width: "60px", height: "60px", margin: "15px" }} onClick={() => handleClick(index)}>
+        {board[index]}
+      </button>
+    );
+  }
+
+  function resetGame() {
+    setBoard(emptyBoard);
+    setIsXNext(true);
+  }
+
+  // The text content for the game status and the reset button should be short and concise.
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        paddingBottom: "60px",
+      }}
+    >
+      <div style={{ flexBasis: "30vw", minWidth: "5vw" }}></div>
+      <div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <h2>{winner ? `${text.TicTacToe.winner.content} ${winner}` : isDraw ? text.TicTacToe.draw.content : `${text.TicTacToe.nextPlayer.content} ${isXNext ? "X" : "O"}`}</h2>
+          <div style={{ display: "grid", gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)" }}>
+            {Array(9).fill(null).map((_, index) => renderSquare(index))}
+          </div>
+          <button style={{ marginTop: "15px" }} onClick={resetGame}>{text.TicTacToe.startNewGame.content}</button>
+        </div>
+      </div>
+      <div style={{ flexBasis: "30vw", minWidth: "5vw" }}></div>
+    </div>
+  );
+}
+
+function calculateWinner(board) {
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (let i = 0; i < winningCombinations.length; i++) {
+    const [a, b, c] = winningCombinations[i];
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return board[a];
+    }
+  }
+  return null;
+}
+
+function checkDraw(board) {
+  return board.every((square) => square !== null);
+}

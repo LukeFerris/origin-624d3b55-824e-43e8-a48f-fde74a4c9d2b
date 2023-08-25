@@ -1,0 +1,14 @@
+[
+  {
+    "fileName": "ImageFileName1",
+    "prompt": "ImageAltTag",
+    "width": "100",
+    "height": "50"
+  },
+  {
+    "fileName": "ImageFileName2",
+    "prompt": "ImageAltTag",
+    "width": "100",
+    "height": "50"
+  }
+]

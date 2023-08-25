@@ -1,0 +1,40 @@
+// React imports
+import React from "react";
+
+// Project imports
+
+// Gradient
+import Gradient from "./landingPageComponents/Gradient";
+
+// Footer
+import Footer from "./landingPageComponents/Footer";
+
+// HeroStandard
+import HeroStandard from "./landingPageComponents/HeroStandard";
+import heroImage from "./assets/images/heroImage.png";
+
+// TicTacToe
+import TicTacToe from "./landingPageComponents/TicTacToe";
+
+export default function Main() {
+  return (
+    <div style={{ overflow: "hidden" }}>
+      {/* All pages have Gradient */}
+      <Gradient />
+
+      {/* HeroStandard component with the correct input arguments */}
+      <HeroStandard 
+        mainHeading="Welcome to TicTacToe" 
+        subHeading="Enjoy a classic game of TicTacToe. Play with your friends and see who wins!" 
+        imageSrc={heroImage} 
+        imageAltTag="4K photo shoot of a TicTacToe game board, width: 1600px and height: 1400px"
+      />
+
+      {/* TicTacToe component */}
+      <TicTacToe />
+
+      {/* All pages have a Footer */}
+      <Footer />
+    </div>
+  );
+}

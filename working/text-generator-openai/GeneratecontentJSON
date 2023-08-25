@@ -1,0 +1,34 @@
+{
+  "TicTacToe": {
+    "winner": {
+      "guidelines": "This text should be short and concise, announcing the winner of the game. It should be neutral and celebratory.",
+      "content": "Congratulations! The winner is"
+    },
+    "draw": {
+      "guidelines": "This text should be short and concise, announcing a draw in the game. It should be neutral and informative.",
+      "content": "It's a draw! No one wins this round."
+    },
+    "nextPlayer": {
+      "guidelines": "This text should be short and concise, indicating whose turn it is to play. It should be neutral and informative.",
+      "content": "Next player's turn:"
+    },
+    "startNewGame": {
+      "guidelines": "This text should be short and concise, indicating the option to start a new game. It should be neutral and inviting.",
+      "content": "Start New Game"
+    }
+  },
+  "Main": {
+    "mainHeading": {
+      "guidelines": "This text should be 1-4 words, acting as the main heading for the page. It should be catchy and relevant to the game of TicTacToe.",
+      "content": "TicTacTotality"
+    },
+    "subHeading": {
+      "guidelines": "This text should be 30-50 words, acting as a page description. It should be informative and relevant to the game of TicTacToe.",
+      "content": "Experience the ultimate game of TicTacToe. Challenge your friends, test your strategy, and enjoy the classic game in a new, digital format. Who will be the TicTacTotality champion?"
+    },
+    "imageAltTag": {
+      "guidelines": "This text should be a detailed alt text for the image, containing the keywords '4K photo shoot' and the dimensions width: 1600px and height: 1400px. It should be descriptive and informative.",
+      "content": "4K photo shoot of a TicTacToe game in progress, image dimensions width: 1600px and height: 1400px."
+    }
+  }
+}
